@@ -144,6 +144,22 @@ body {
   display: flex;
   flex-direction: column;
 }
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+h1,
+h2,
+h3,
+p,
+li {
+  color: lightgrey;
+}
 header {
   padding-top: 1rem;
   padding-bottom: 5rem;
@@ -179,10 +195,6 @@ header nav a {
   align-items: center;
   justify-content: space-between;
 }
-.banner .tile h1 {
-  font-size: 3rem;
-  color: lightgrey;
-}
 .banner .tile .bio.short {
   font-size: 1.5rem;
   display: flex;
@@ -192,10 +204,8 @@ header nav a {
   color: lightgrey;
 }
 .banner .tile button {
-  font-size: 2rem;
   margin-bottom: 1rem;
   background: #0a0a0a;
-  color: lightgrey;
   border: none;
   padding: 0.5rem;
   border-radius: 5px;
@@ -204,15 +214,27 @@ header nav a {
   border: 1px solid red;
   display: flex;
   flex-direction: column;
+  margin: 1rem;
+}
+.info .box {
+  margin: 1rem;
 }
 .info .box.top {
   background: green;
   display: flex;
+  align-items: center;
+}
+.info .box.top .left {
+  border: 1px solid red;
+  display: block;
+  border: 5px solid #0a0a0a;
 }
 .info .box.top .right {
   background: purple;
+  display: flex;
+  flex-direction: column;
 }
-.info .workHistory {
+.info .bottom {
   background: blue;
 }
 footer {

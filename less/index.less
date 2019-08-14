@@ -68,6 +68,8 @@ html, body {
 @h3Relative: 1rem * 1.5;
 @avatarDiameter: 20rem;
 @bannerMiddleMargin: 1rem;
+@standardBorder: 5px solid rgb(10, 10, 10);
+@baselineFontColor: lightgrey;
 
 // Mixins
 .testBorder() {
@@ -93,6 +95,22 @@ html, body {
 	max-width: @maxWidth;
 	margin: 0 auto;
 	.flexColumn();
+}
+
+h1 {
+	font-size: @h1Relative;
+}
+
+h2 {
+	font-size: @h2Relative;
+}
+
+h3 {
+	font-size: @h3Relative;
+}
+
+h1, h2, h3, p, li {
+	color: @baselineFontColor;
 }
 
 header {
@@ -125,7 +143,7 @@ header {
 		img {
 			height: @avatarDiameter;
 			border-radius: 50%;
-			border: 5px solid rgb(10, 10, 10);
+			border: @standardBorder;
 		}
 	}
 
@@ -134,11 +152,6 @@ header {
 		.flexColumn();
 		align-items: center;
 		justify-content: space-between;
-
-		h1 {
-			font-size: @h1Relative;
-			color: lightgrey;
-		}
 
 		.bio.short {
 			font-size: @h3Relative;
@@ -149,10 +162,8 @@ header {
 		}
 
 		button {
-			font-size: @h2Relative;
 			margin-bottom: 1rem;
 			background: rgb(10, 10, 10);
-			color: lightgrey;
 			border: none;
 			padding: 0.5rem;
 			.roundCorners();
@@ -163,13 +174,26 @@ header {
 .info {
 	.testBorder();
 	.flexColumn();
+	margin: 1rem;
+
+	.box {
+		margin: 1rem;
+	}
 
 	.box.top {
 		background: green;
 		display: flex;
+		align-items: center;
+
+		.left {
+			.testBorder();
+			display: block;
+			border: @standardBorder;
+		}
 
 		.right {
 			background: purple;
+			.flexColumn();
 		
 			.skills {
 
@@ -181,7 +205,7 @@ header {
 		}
 	}
 
-	.workHistory {
+	.bottom {
 		background: blue;
 	}
 }
