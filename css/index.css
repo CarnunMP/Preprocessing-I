@@ -207,7 +207,6 @@ header nav a {
   border-radius: 5px;
 }
 .info {
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
   margin: 1rem;
@@ -216,24 +215,60 @@ header nav a {
   margin: 1rem;
 }
 .info .box.top {
-  background: green;
   display: flex;
   align-items: center;
+  margin-top: 2rem;
 }
 .info .box.top .left {
   display: block;
   border: 5px solid #0a0a0a;
   max-width: 60%;
+  padding: 1rem;
 }
 .info .box.top .right {
-  background: purple;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   flex-grow: 1;
+  border: 5px solid #0a0a0a;
 }
-.info .bottom {
-  background: blue;
+.info .box.top .right .skills {
+  margin: 1rem 0.5rem;
+}
+.info .box.top .right hr {
+  margin: 0 1rem;
+  border: 0;
+  border-bottom: 1px solid lightgrey;
+}
+.info .box.top .right .interests {
+  margin: 1rem 0.5rem;
+}
+.info .box.top .right ol {
+  padding-left: 1.5rem;
+}
+.info .box.top .right h2 {
+  margin-bottom: 1rem;
+}
+.info .box.bottom {
+  border: 5px solid #0a0a0a;
+  padding: 1rem;
+}
+.info .box.bottom h2 {
+  margin-bottom: 1rem;
+}
+.info .box.bottom ul {
+  list-style: none;
 }
 footer {
-  border: 1px solid red;
+  display: flex;
+  justify-content: center;
+}
+footer button {
+  margin-bottom: 1rem;
+  background: #0a0a0a;
+  border: none;
+  padding: 0.5rem;
+  margin: 1rem;
+  border-radius: 5px;
+  color: lightgrey;
 }
