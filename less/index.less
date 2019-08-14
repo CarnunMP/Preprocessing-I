@@ -57,3 +57,41 @@ html, body {
 	height: 100%;
 }
 
+// My own code:
+
+// Variables
+@maxWidth: 1080px;
+
+// Mixins
+.testBorder() {
+	border: 1px solid black;
+}
+
+.flex-column() {
+	display: flex;
+	flex-direction: column;
+}
+
+// The rest
+.container {
+	background: pink;
+	max-width: @maxWidth;
+	margin: 0 auto;
+	.flex-column();
+}
+
+header {
+	.testBorder();
+}
+
+.banner {
+	.testBorder();
+}
+
+.info {
+	.testBorder();
+}
+
+footer {
+	.testBorder();
+}
