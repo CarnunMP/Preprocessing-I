@@ -134,22 +134,34 @@ html,
 body {
   height: 100%;
 }
+.root {
+  font-size: 100%;
+}
 .container {
-  background: pink;
+  background: #141414;
   max-width: 1080px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
 }
-header {
-  border: 1px solid black;
+header nav {
+  display: flex;
+  justify-content: center;
+}
+header nav a {
+  background: #0a0a0a;
+  border-radius: 5px;
+  padding: 0.5rem 2.5rem;
+  margin: 1rem 3rem;
+  color: lightgrey;
+  text-decoration: none;
 }
 .banner {
-  border: 1px solid black;
+  border: 1px solid red;
 }
 .info {
-  border: 1px solid black;
+  border: 1px solid red;
 }
 footer {
-  border: 1px solid black;
+  border: 1px solid red;
 }

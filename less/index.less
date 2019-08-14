@@ -61,10 +61,12 @@ html, body {
 
 // Variables
 @maxWidth: 1080px;
+@desktopRootFontSize: 100%;
+@mobileRootFontSize: 150%;
 
 // Mixins
 .testBorder() {
-	border: 1px solid black;
+	border: 1px solid red;
 }
 
 .flex-column() {
@@ -73,15 +75,34 @@ html, body {
 }
 
 // The rest
+.root {
+	font-size: @desktopRootFontSize;
+}
+
 .container {
-	background: pink;
+	background: rgb(20, 20, 20);
 	max-width: @maxWidth;
 	margin: 0 auto;
 	.flex-column();
 }
 
 header {
-	.testBorder();
+	// .testBorder();
+
+	nav {
+		display: flex;
+		justify-content: center;
+
+		a {
+			// .testBorder();
+			background: rgb(10, 10, 10);
+			border-radius: 5px;
+			padding: 0.5rem 2.5rem;
+			margin: 1rem 3rem;
+			color: lightgrey;
+			text-decoration: none;
+		}
+	}
 }
 
 .banner {
