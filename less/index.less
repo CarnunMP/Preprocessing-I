@@ -79,6 +79,10 @@ html, body {
 	flex-direction: column;
 }
 
+.roundCorners() {
+	border-radius: 5px;
+}
+
 // The rest
 .root {
 	font-size: @desktopRootFontSize;
@@ -102,7 +106,7 @@ header {
 		a {
 			// .testBorder();
 			background: rgb(10, 10, 10);
-			border-radius: 5px;
+			.roundCorners();
 			padding: 0.5rem 2.5rem;
 			margin: 0rem 3rem;
 			color: lightgrey;
@@ -149,13 +153,37 @@ header {
 			margin-bottom: 1rem;
 			background: rgb(10, 10, 10);
 			color: lightgrey;
-			border: 5px solid rgb(15, 15, 15);
+			border: none;
+			padding: 0.5rem;
+			.roundCorners();
 		}
 	}
 }
 
 .info {
 	.testBorder();
+	.flexColumn();
+
+	.box.top {
+		background: green;
+		display: flex;
+
+		.right {
+			background: purple;
+		
+			.skills {
+
+			}
+
+			.interests {
+
+			}
+		}
+	}
+
+	.workHistory {
+		background: blue;
+	}
 }
 
 footer {

@@ -196,10 +196,24 @@ header nav a {
   margin-bottom: 1rem;
   background: #0a0a0a;
   color: lightgrey;
-  border: 5px solid #0f0f0f;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 5px;
 }
 .info {
   border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+}
+.info .box.top {
+  background: green;
+  display: flex;
+}
+.info .box.top .right {
+  background: purple;
+}
+.info .workHistory {
+  background: blue;
 }
 footer {
   border: 1px solid red;
