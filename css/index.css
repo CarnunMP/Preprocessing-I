@@ -158,6 +158,15 @@ header nav a {
 }
 .banner {
   border: 1px solid red;
+  display: flex;
+}
+.banner .avatar {
+  height: 100px;
+  width: 100px;
+  background: red;
+}
+.banner .tile {
+  background: green;
 }
 .info {
   border: 1px solid red;
