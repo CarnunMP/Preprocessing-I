@@ -62,6 +62,7 @@ html, body {
 
 // Variables
 @maxWidth: 1080px;
+@mobileMaxWidth: 500px;
 @desktopRootFontSize: 100%;
 @mobileRootFontSize: 150%;
 @h1Relative: 1rem * 3;
@@ -124,6 +125,11 @@ html, body {
 		nav {
 			display: flex;
 			justify-content: center;
+
+			@media (max-width: @mobileMaxWidth) { 
+				flex-direction: column;
+				align-items: center;
+			}
 	
 			a {
 				// .testBorder();
@@ -133,6 +139,10 @@ html, body {
 				margin: 0rem 3rem;
 				color: lightgrey;
 				text-decoration: none;
+
+				@media (max-width: @mobileMaxWidth) {
+					margin: 0.5rem 5rem;
+				}
 			}
 		}
 	}
