@@ -160,6 +160,11 @@ body {
   padding-top: 1rem;
   padding-bottom: 5rem;
 }
+@media (max-width: 500px) {
+  .container header {
+    padding-bottom: 3rem;
+  }
+}
 .container header nav {
   display: flex;
   justify-content: center;
@@ -187,8 +192,21 @@ body {
   display: flex;
   justify-content: center;
 }
+@media (max-width: 500px) {
+  .container .banner {
+    flex-direction: column;
+  }
+}
 .container .banner .avatar {
   margin-right: 1rem;
+}
+@media (max-width: 500px) {
+  .container .banner .avatar {
+    margin-right: 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
 }
 .container .banner .avatar img {
   height: 20rem;
@@ -201,6 +219,14 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+}
+@media (max-width: 500px) {
+  .container .banner .tile h1 {
+    margin-bottom: 2rem;
+  }
+  .container .banner .tile button {
+    margin-top: 2rem;
+  }
 }
 .container .banner .tile .bio.short {
   font-size: 1.5rem;
@@ -230,11 +256,21 @@ body {
   align-items: center;
   margin-top: 2rem;
 }
+@media (max-width: 500px) {
+  .container .info .box.top {
+    flex-direction: column;
+  }
+}
 .container .info .box.top .left {
   display: block;
   border: 5px solid #0a0a0a;
   max-width: 60%;
   padding: 1rem;
+}
+@media (max-width: 500px) {
+  .container .info .box.top .left {
+    max-width: 90%;
+  }
 }
 .container .info .box.top .right {
   display: flex;
@@ -242,6 +278,11 @@ body {
   align-items: flex-start;
   flex-grow: 1;
   border: 5px solid #0a0a0a;
+}
+@media (max-width: 500px) {
+  .container .info .box.top .right {
+    width: 90%;
+  }
 }
 .container .info .box.top .right .skills {
   margin: 1rem 0.5rem;

@@ -121,6 +121,10 @@ html, body {
 	header {
 		padding-top: 1rem;
 		padding-bottom: 5rem;
+
+		@media (max-width: @mobileMaxWidth) {
+			padding-bottom: 3rem;
+		}
 		
 		nav {
 			display: flex;
@@ -150,9 +154,20 @@ html, body {
 	.banner {
 		display: flex;
 		justify-content: center;
+
+		@media (max-width: @mobileMaxWidth) {
+			flex-direction: column;
+		}
 	
 		.avatar {
 			margin-right: @bannerMiddleMargin;
+
+			@media (max-width: @mobileMaxWidth) {
+				margin-right: 0;
+				display: flex;
+				justify-content: center;
+				margin-bottom: 1rem;
+			}
 	
 			img {
 				height: @avatarDiameter;
@@ -166,6 +181,16 @@ html, body {
 			.flexColumn();
 			align-items: center;
 			justify-content: space-between;
+
+			@media (max-width: @mobileMaxWidth) {
+				h1 {
+					margin-bottom: 2rem;
+				}
+
+				button {
+					margin-top: 2rem;
+				}
+			}
 	
 			.bio.short {
 				font-size: @h3Relative;
@@ -197,12 +222,20 @@ html, body {
 			display: flex;
 			align-items: center;
 			margin-top: 2rem;
+
+			@media (max-width: @mobileMaxWidth) {
+				flex-direction: column;
+			}
 	
 			.left {
 				display: block;
 				.giveStandardBorder();
 				max-width: 60%;
 				padding: 1rem;
+
+				@media (max-width: @mobileMaxWidth) {
+					max-width: 90%;
+				}
 			}
 	
 			.right {
@@ -210,6 +243,10 @@ html, body {
 				align-items: flex-start;
 				flex-grow: 1;
 				.giveStandardBorder();
+
+				@media (max-width: @mobileMaxWidth) {
+					width: 90%;
+				}
 			
 				.skills {
 					margin: 1rem 0.5rem;
