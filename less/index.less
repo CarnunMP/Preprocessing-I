@@ -33,7 +33,8 @@ body {
 	line-height: 1;
 }
 ol, ul {
-	list-style: none;
+	// list-style: none;
+	// ^^^Edited this!
 }
 blockquote, q {
 	quotes: none;
@@ -186,14 +187,15 @@ header {
 		align-items: center;
 
 		.left {
-			.testBorder();
 			display: block;
 			border: @standardBorder;
+			max-width: 60%;
 		}
 
 		.right {
 			background: purple;
 			.flexColumn();
+			flex-grow: 1;
 		
 			.skills {
 
