@@ -33,7 +33,8 @@ body {
 	line-height: 1;
 }
 ol, ul {
-	list-style: none;
+	// list-style: none;
+	// ^^^Edited this!
 }
 blockquote, q {
 	quotes: none;
@@ -54,6 +55,249 @@ table {
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
 }
 
+// My own code:
+
+// Variables
+@maxWidth: 1080px;
+@mobileMaxWidth: 500px;
+@desktopRootFontSize: 100%;
+@mobileRootFontSize: 150%;
+@h1Relative: 1rem * 3;
+@h2Relative: 1rem * 2;
+@h3Relative: 1rem * 1.5;
+@avatarDiameter: 20rem;
+@bannerMiddleMargin: 1rem;
+@standardBorder: 5px solid rgb(10, 10, 10);
+@baselineFontColor: lightgrey;
+
+// Mixins
+// .testBorder() {
+// 	border: 1px solid red;
+// }
+
+.flexColumn() {
+	display: flex;
+	flex-direction: column;
+}
+
+.roundCorners() {
+	border-radius: 5px;
+}
+
+.giveStandardBorder() {
+	border: @standardBorder;
+}
+
+// The rest
+.root {
+	font-size: @desktopRootFontSize;
+}
+
+.container {
+	background: rgb(20, 20, 20);
+	max-width: @maxWidth;
+	margin: 0 auto;
+	.flexColumn();
+
+	h1 {
+		font-size: @h1Relative;
+	}
+	
+	h2 {
+		font-size: @h2Relative;
+	}
+	
+	h3 {
+		font-size: @h3Relative;
+	}
+	
+	h1, h2, h3, p, li {
+		color: @baselineFontColor;
+	}
+	
+	header {
+		padding-top: 1rem;
+		padding-bottom: 5rem;
+
+		@media (max-width: @mobileMaxWidth) {
+			padding-bottom: 3rem;
+		}
+		
+		nav {
+			display: flex;
+			justify-content: center;
+
+			@media (max-width: @mobileMaxWidth) { 
+				flex-direction: column;
+				align-items: center;
+			}
+	
+			a {
+				// .testBorder();
+				background: rgb(10, 10, 10);
+				.roundCorners();
+				padding: 0.5rem 2.5rem;
+				margin: 0rem 3rem;
+				color: lightgrey;
+				text-decoration: none;
+
+				@media (max-width: @mobileMaxWidth) {
+					margin: 0.5rem 5rem;
+				}
+			}
+		}
+	}
+	
+	.banner {
+		display: flex;
+		justify-content: center;
+
+		@media (max-width: @mobileMaxWidth) {
+			flex-direction: column;
+		}
+	
+		.avatar {
+			margin-right: @bannerMiddleMargin;
+
+			@media (max-width: @mobileMaxWidth) {
+				margin-right: 0;
+				display: flex;
+				justify-content: center;
+				margin-bottom: 1rem;
+			}
+	
+			img {
+				height: @avatarDiameter;
+				border-radius: 50%;
+				border: @standardBorder;
+			}
+		}
+	
+		.tile {
+			margin-left: @bannerMiddleMargin;
+			.flexColumn();
+			align-items: center;
+			justify-content: space-between;
+
+			@media (max-width: @mobileMaxWidth) {
+				h1 {
+					margin-bottom: 2rem;
+				}
+
+				button {
+					margin-top: 2rem;
+				}
+			}
+	
+			.bio.short {
+				font-size: @h3Relative;
+				.flexColumn();
+				align-items: center;
+				line-height: 3rem;
+				color: lightgrey;
+			}
+	
+			button {
+				margin-bottom: 1rem;
+				background: rgb(10, 10, 10);
+				border: none;
+				padding: 0.5rem;
+				.roundCorners();
+			}
+		}
+	}
+	
+	.info {
+		.flexColumn();
+		margin: 1rem;
+	
+		.box {
+			margin: 1rem;
+		}
+	
+		.box.top {
+			display: flex;
+			align-items: center;
+			margin-top: 2rem;
+
+			@media (max-width: @mobileMaxWidth) {
+				flex-direction: column;
+			}
+	
+			.left {
+				display: block;
+				.giveStandardBorder();
+				max-width: 60%;
+				padding: 1rem;
+
+				@media (max-width: @mobileMaxWidth) {
+					max-width: 90%;
+				}
+			}
+	
+			.right {
+				.flexColumn();
+				align-items: flex-start;
+				flex-grow: 1;
+				.giveStandardBorder();
+
+				@media (max-width: @mobileMaxWidth) {
+					width: 90%;
+				}
+			
+				.skills {
+					margin: 1rem 0.5rem;
+				}
+	
+				hr {
+					margin: 0 1rem;
+					border: 0;
+					border-bottom: 1px solid lightgrey;
+				}
+	
+				.interests {
+					margin: 1rem 0.5rem; // Hmm... a little repetition here! Better class names would have prevented this.
+				}
+	
+				ol {
+					padding-left: 1.5rem;
+				}
+	
+				h2 {
+					margin-bottom: 1rem;
+				}
+			}
+		}
+	
+		.box.bottom {
+			.giveStandardBorder();
+			padding: 1rem;
+	
+			h2 {
+				margin-bottom: 1rem;
+			}
+	
+			ul {
+				list-style: none;
+			}
+		}
+	}
+	
+	footer {
+		display: flex;
+		justify-content: center;
+	
+		button {
+			margin-bottom: 1rem;
+			background: rgb(10, 10, 10);
+			border: none;
+			padding: 0.5rem;
+			margin: 1rem;
+			.roundCorners();
+			color: lightgrey;
+		}
+	}
+}
